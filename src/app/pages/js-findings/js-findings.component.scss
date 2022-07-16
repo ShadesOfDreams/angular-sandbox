@@ -1,0 +1,20 @@
+table {
+  tr {
+    border: 2px solid white;
+  }
+}
+
+[class^="command-"] {
+  background-color: #eee;
+  padding: 0.5em;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.command-label {
+  width: 20em;
+}
+
+.command-value {
+  width: 15em;
+}

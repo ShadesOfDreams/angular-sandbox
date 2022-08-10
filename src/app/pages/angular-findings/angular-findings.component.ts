@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject, catchError, first, forkJoin, of, ReplaySubject, Subject, Subscription, timeout } from 'rxjs';
 
+type TestType = { propNameA: number, propNameB: string };
+type TestKeys = keyof TestType;
+
 @Component({
   selector: 'angular-findings',
   template: `<div>
@@ -14,19 +17,28 @@ import { BehaviorSubject, catchError, first, forkJoin, of, ReplaySubject, Subjec
   <button (click)="addNewValue()">Add new value</button>
   <button [disabled]="!subscribed" (click)="unsubscribeAll()">Unsubscribe all</button>
   <button (click)="reset()">Reset</button>
+  <div>
+    {{ typeTest }}
+  </div>
   `,
   styles: [`.red { color: red }`]
 })
 export class AngularFindingsComponent {
+  //#region Subscriptions
   private subscriptions: Array<Subscription> = [];
   private subjectTest = new Subject<number>();
   private behaviourSubjectTest = new BehaviorSubject<number>(0);
   private replaySubjectTest = new ReplaySubject<number>(0);
+  //#endregion
+
+  typeTest: TestKeys = "propNameA";
 
   logs: any[] = [];
   subscribed = false;
 
-  constructor() { }
+  constructor() {
+    console.log(typeof this.typeTest)
+  }
 
   subscribeAll() {
     this.subscriptions.push(

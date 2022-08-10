@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFindingsComponent } from './pages/angular-findings/angular-findings.component';
+import { UserregistrationComponent } from './pages/angular-tests/reactive-form.component';
 import { HomeComponent } from './pages/home/home.component';
 import { JSFindingsComponent } from './pages/js-findings/js-findings.component';
 
@@ -28,6 +29,10 @@ const routes: Routes = [
       title: 'Angular findings'
     },
     component: AngularFindingsComponent,
+  },
+  {
+    path: 'angular-test',
+    component: UserregistrationComponent
   },
   {
     path: '**',

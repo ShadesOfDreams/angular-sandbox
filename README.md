@@ -2,9 +2,16 @@
 
 ## Home page
 
-- preserves Angular 13 initial page
+- Preserves Angular 13 initial page
 
 ## JS Findings
 
-- shows commands and their values
-- js simple sandbox for finding interesting results
+- Shows commands and their values
+- JS simple sandbox for finding interesting results
+
+## Angular findings
+
+- User registration test from Telekom skill test
+- Observable tests
+- Type tests
+- Reactive form test
